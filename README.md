@@ -1,6 +1,5 @@
 # git-tutorial
 ### GitHub Cheat Sheet for Developers
-Here's a detailed GitHub tutorial cheat sheet covering the most commonly used Git commands that developers on your team can reference. This guide includes commands for setting up a repository, managing branches, making commits, and collaborating with others.
 
 ### **Getting Started**
 
@@ -19,167 +18,113 @@ Here's a detailed GitHub tutorial cheat sheet covering the most commonly used Gi
      git config --list
      ```
 
-2. **Create a New Repository**
-   - Create a new local repository:
+2. **Clone the Repository**
+   - Clone the practice repository:
      ```bash
-     git init <repository-name>
+     git clone git@github.com:urbantech/git-tutorial.git
      ```
-   - Clone an existing repository:
+   - Change directory into the cloned repository:
      ```bash
-     git clone <repository-url>
+     cd git-tutorial
      ```
 
 ---
 
 ### **Basic Commands**
 
-3. **Navigating and Managing Repositories**
-   - Change directory into your project:
-     ```bash
-     cd <repository-name>
-     ```
+3. **Check Repository Status**
    - View the status of your repository:
      ```bash
      git status
      ```
 
-4. **Staging Changes**
-   - Stage a specific file:
+4. **Create Your First Git Commit**
+   - Create a new file (e.g., `README.md`):
      ```bash
-     git add <file-name>
+     touch README.md
      ```
-   - Stage all changes:
+   - Open `README.md` in your text editor and add some content (e.g., `# Git Tutorial`).
+   - Stage the new file:
      ```bash
-     git add .
+     git add README.md
      ```
-
-5. **Committing Changes**
-   - Commit staged changes with a message:
+   - Commit the staged changes with a message:
      ```bash
-     git commit -m "Your commit message"
+     git commit -m "Add README.md for Git tutorial"
      ```
 
 ---
 
 ### **Branching and Merging**
 
-6. **Branching**
+5. **Branching**
    - List all branches:
      ```bash
      git branch
      ```
-   - Create a new branch:
+   - Create a new branch for your feature (e.g., `feature/first-commit`):
      ```bash
-     git branch <branch-name>
+     git branch feature/first-commit
      ```
-   - Switch to a different branch:
+   - Switch to the new branch:
      ```bash
-     git checkout <branch-name>
-     ```
-   - Create and switch to a new branch:
-     ```bash
-     git checkout -b <branch-name>
+     git checkout feature/first-commit
      ```
 
-7. **Merging**
-   - Merge another branch into the current branch:
+6. **Merging**
+   - Switch back to the main branch:
      ```bash
-     git merge <branch-name>
+     git checkout main
      ```
-   - Resolve merge conflicts manually, then stage and commit the resolved files:
+   - Merge the feature branch into the main branch:
      ```bash
-     git add <resolved-file>
-     git commit -m "Resolved merge conflict"
+     git merge feature/first-commit
      ```
 
 ---
 
 ### **Working with Remote Repositories**
 
-8. **Connecting to Remote Repositories**
-   - Add a remote repository:
+7. **Push Changes**
+   - Push your changes to the remote repository:
      ```bash
-     git remote add origin <repository-url>
-     ```
-   - List remote repositories:
-     ```bash
-     git remote -v
+     git push origin main
      ```
 
-9. **Pushing Changes**
-   - Push changes to a remote branch:
+8. **Pull Changes**
+   - Fetch and merge changes from the remote repository:
      ```bash
-     git push origin <branch-name>
+     git pull origin main
      ```
-   - Push all branches:
-     ```bash
-     git push --all
-     ```
-
-10. **Pulling Changes**
-    - Fetch and merge changes from the remote repository:
-      ```bash
-      git pull origin <branch-name>
-      ```
 
 ---
 
 ### **Viewing History and Changes**
 
-11. **Viewing Commit History**
-    - View the commit history:
-      ```bash
-      git log
-      ```
-    - View a one-line summary of the commit history:
-      ```bash
-      git log --oneline
-      ```
-    - View changes made in the last commit:
-      ```bash
-      git show
-      ```
+9. **Viewing Commit History**
+   - View the commit history:
+     ```bash
+     git log
+     ```
 
-12. **Diffing Changes**
+10. **Diffing Changes**
     - Show changes not yet staged:
       ```bash
       git diff
-      ```
-    - Show changes between the working directory and the last commit:
-      ```bash
-      git diff HEAD
       ```
 
 ---
 
 ### **Undoing Changes**
 
-13. **Undoing Changes**
+11. **Undoing Changes**
     - Unstage a staged file:
       ```bash
-      git reset <file-name>
+      git reset README.md
       ```
     - Discard changes in a file (uncommitted changes):
       ```bash
-      git checkout -- <file-name>
-      ```
-    - Revert a commit by creating a new commit:
-      ```bash
-      git revert <commit-id>
-      ```
-
----
-
-### **Tagging**
-
-14. **Tagging**
-    - Create a new tag:
-      ```bash
-      git tag <tag-name>
-      ```
-    - Push tags to the remote repository:
-      ```bash
-      git push origin --tags
+      git checkout -- README.md
       ```
 
 ---
@@ -197,3 +142,5 @@ Here's a detailed GitHub tutorial cheat sheet covering the most commonly used Gi
 - [Git Documentation](https://git-scm.com/doc)
 - [GitHub Guides](https://guides.github.com/)
 - [Git Cheat Sheet PDF](https://education.github.com/git-cheat-sheet-education.pdf)
+
+This cheat sheet provides a structured way for students to practice Git commands using the provided repository.
